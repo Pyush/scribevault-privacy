@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ScribeVault Privacy Policy</title>
+<style>
+  :root { --bg: #ffffff; --fg: #1f2937; --muted: #6b7280; --accent: #4f46e5; --rule: #e5e7eb; --quote: #f3f4f6; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #0b0f1c; --fg: #e5e7eb; --muted: #9ca3af; --accent: #818cf8; --rule: #1f2937; --quote: #131a2e; }
+  }
+  body { margin: 0; background: var(--bg); color: var(--fg); font: 16px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 1.8rem; line-height: 1.25; }
+  h2 { font-size: 1.3rem; margin-top: 2rem; }
+  h3 { font-size: 1.05rem; }
+  a { color: var(--accent); }
+  code { font-size: 0.9em; background: var(--quote); padding: 1px 5px; border-radius: 4px; overflow-wrap: anywhere; }
+  blockquote { margin: 1rem 0; padding: 12px 16px; background: var(--quote); border-left: 4px solid var(--accent); border-radius: 4px; }
+  hr { border: 0; border-top: 1px solid var(--rule); margin: 2rem 0; }
+</style>
+</head>
+<body>
+<main>
+<h1>Privacy Policy for ScribeVault</h1>
+<p><strong>Effective Date:</strong> October 28, 2026</p>
+<p><strong>Application:</strong> ScribeVault: Audio Notes &amp; Offline AI Transcription (<code>com.scribevault.app</code>)</p>
+<p><strong>Developer Contact:</strong> <a href="mailto:androidpyus@gmail.com">androidpyus@gmail.com</a></p>
+<hr>
+<h2>1. Introduction &amp; Core Principle</h2>
+<p><strong>ScribeVault</strong> ("we", "our", or "the app") is designed from the ground up as a <strong>privacy-first, on-device application</strong>. Our foundational architectural principle is simple:</p>
+<blockquote><strong>Your voice, audio recordings, notes, and transcripts are strictly private and never leave your device.</strong></blockquote>
+<p>We do not operate backend transcription servers, cloud inference APIs, telemetry collectors, or remote analytical tracking services. All speech-to-text processing, summarization, and action item detection is executed 100% locally on your device's hardware.</p>
+<hr>
+<h2>2. Information We Access and Process</h2>
+<h3>2.1 Audio Data &amp; Microphone Access (<code>RECORD_AUDIO</code>)</h3>
+<ul>
+<li><strong>Purpose:</strong> ScribeVault requires access to your device's microphone solely when you explicitly tap the record button to capture voice memos, meeting notes, or lectures.</li>
+<li><strong>Processing:</strong> Audio waveforms are converted to text exclusively on-device using local quantized neural network models.</li>
+<li><strong>Storage &amp; Transmission:</strong> Raw audio files (<code>.m4a</code>, <code>.wav</code>) are saved in the app's sandboxed local storage directory. <strong>Audio recordings are never uploaded, streamed, or transmitted to any external server.</strong></li>
+</ul>
+<h3>2.2 Transcripts, Notes, &amp; Speech Intelligence Data</h3>
+<ul>
+<li><strong>Processing:</strong> Meeting summaries, key topics, and action item checklists are extracted locally using on-device heuristic natural language algorithms.</li>
+<li><strong>Storage:</strong> All notes and metadata are stored locally in an embedded SQLite database protected with <strong>SQLCipher AES-256 encryption at rest</strong>.</li>
+<li><strong>Transmission:</strong> Zero bytes of text or metadata are ever transmitted off-device.</li>
+</ul>
+<h3>2.3 Biometric Data (<code>USE_BIOMETRIC</code>)</h3>
+<ul>
+<li>When enabled in Settings, ScribeVault uses Android's official <code>BiometricPrompt</code> framework to unlock the app with your fingerprint, face, or device PIN/pattern.</li>
+<li><strong>We do not collect, view, or store biometric signatures.</strong> Authentication is handled strictly by the secure hardware enclave of the Android operating system.</li>
+</ul>
+<h3>2.4 Device &amp; Network Information</h3>
+<ul>
+<li>The app requests internet access (<code>INTERNET</code>) only to download on-device AI speech models and to handle Google Play Billing transactions. No audio, transcripts, or notes are sent over the network.</li>
+<li>We do not log IP addresses, device identifiers (IMEI, Android ID), advertising IDs, or location data.</li>
+</ul>
+<hr>
+<h2>3. In-App Purchases &amp; Subscriptions</h2>
+<p>ScribeVault integrates with the official <strong>Google Play In-App Billing</strong> API to offer optional ScribeVault Pro subscription plans:</p>
+<ul>
+<li>All payment transactions, credit card data, and billing details are processed directly by <strong>Google Play</strong>. ScribeVault never receives or stores your financial or payment details.</li>
+<li>Google Play provides the app with a cryptographic purchase token to verify subscription validity.</li>
+</ul>
+<hr>
+<h2>4. Third-Party Services &amp; Analytics</h2>
+<ul>
+<li><strong>No Third-Party SDKs:</strong> ScribeVault contains <strong>no third-party tracking, analytics, or advertising SDKs</strong> (such as Firebase Analytics, Adjust, AppsFlyer, or Facebook SDK).</li>
+<li><strong>Model Downloads:</strong> Speech models are downloaded from Hugging Face (huggingface.co). As with any web request, Hugging Face receives your IP address and standard request headers; see the <a href="https://huggingface.co/privacy">Hugging Face Privacy Policy</a>. No personal data or content is sent.</li>
+<li><strong>Google Play:</strong> Purchases are processed by Google under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>.</li>
+<li><strong>No Data Sharing:</strong> We do not sell, rent, monetize, trade, or share user data with any third parties, data brokers, or advertising networks.</li>
+</ul>
+<hr>
+<h2>5. User Data Control &amp; Deletion Rights</h2>
+<p>You have complete, absolute control over your data:</p>
+<ul>
+<li><strong>Instant Deletion:</strong> You can delete individual audio notes or transcripts at any time by tapping delete in the app.</li>
+<li><strong>Bulk Deletion:</strong> You can select all notes in the notes list and delete them together (audio files are deleted with them), and remove downloaded AI models in the Settings menu.</li>
+<li><strong>App Uninstall:</strong> Uninstalling ScribeVault from your device immediately purges all app-sandboxed audio recordings, encryption keys, and database files.</li>
+</ul>
+<hr>
+<h2>6. Children's Privacy</h2>
+<p>ScribeVault is a general audience productivity application and does not knowingly collect personal information from children under the age of 13. Because no data leaves the device, no personal information of any user is gathered or stored.</p>
+<hr>
+<h2>7. Changes to This Privacy Policy</h2>
+<p>We may update this Privacy Policy from time to time to reflect operational or regulatory adjustments. Any updates will be posted on this page with a revised "Effective Date".</p>
+<hr>
+<h2>8. Contact Us</h2>
+<p>If you have questions or suggestions regarding this Privacy Policy, please contact us:</p>
+<ul>
+<li><strong>Email:</strong> <a href="mailto:androidpyus@gmail.com">androidpyus@gmail.com</a></li>
+</ul>
+</main>
+</body>
+</html>
