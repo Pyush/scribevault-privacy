@@ -23,8 +23,8 @@
 <body>
 <main>
 <h1>Privacy Policy for ScribeVault</h1>
-<p><strong>Effective Date:</strong> October 28, 2026</p>
-<p><strong>Application:</strong> ScribeVault: Audio Notes &amp; Offline AI Transcription (<code>com.scribevault.app</code>)</p>
+<p><strong>Effective Date:</strong> October 30, 2026</p>
+<p><strong>Application:</strong> ScribeVault (<code>com.scribevault.app</code>)</p>
 <p><strong>Developer Contact:</strong> <a href="mailto:androidpyus@gmail.com">androidpyus@gmail.com</a></p>
 <hr>
 <h2>1. Introduction &amp; Core Principle</h2>
@@ -39,18 +39,36 @@
 <li><strong>Processing:</strong> Audio waveforms are converted to text exclusively on-device using local quantized neural network models.</li>
 <li><strong>Storage &amp; Transmission:</strong> Raw audio files (<code>.m4a</code>, <code>.wav</code>) are saved in the app's sandboxed local storage directory. <strong>Audio recordings are never uploaded, streamed, or transmitted to any external server.</strong></li>
 </ul>
-<h3>2.2 Transcripts, Notes, &amp; Speech Intelligence Data</h3>
+<h3>2.2 Imported &amp; Shared Audio Files</h3>
+<ul>
+<li>When you import an audio file, or share one to ScribeVault from another app (for example a voice message), the app copies that single file into its private storage and transcribes it on-device. It does not access any other files on your device.</li>
+</ul>
+<h3>2.3 Speaker Detection</h3>
+<ul>
+<li>To label who said what, ScribeVault compares the sound of the voices in a recording on your device. These voice measurements are used only while the recording is being transcribed and are then discarded; only the speaker labels (such as "Speaker 1") are saved with the note.</li>
+<li>ScribeVault does not create voiceprints, does not identify who a person is, and does not compare voices across recordings.</li>
+</ul>
+<h3>2.4 Transcripts, Notes, &amp; Speech Intelligence Data</h3>
 <ul>
 <li><strong>Processing:</strong> Meeting summaries, key topics, and action item checklists are extracted locally using on-device heuristic natural language algorithms.</li>
 <li><strong>Storage:</strong> All notes and metadata are stored locally in an embedded SQLite database protected with <strong>SQLCipher AES-256 encryption at rest</strong>.</li>
 <li><strong>Transmission:</strong> Zero bytes of text or metadata are ever transmitted off-device.</li>
 </ul>
-<h3>2.3 Biometric Data (<code>USE_BIOMETRIC</code>)</h3>
+<h3>2.5 Biometric Data (<code>USE_BIOMETRIC</code>)</h3>
 <ul>
 <li>When enabled in Settings, ScribeVault uses Android's official <code>BiometricPrompt</code> framework to unlock the app with your fingerprint, face, or device PIN/pattern.</li>
 <li><strong>We do not collect, view, or store biometric signatures.</strong> Authentication is handled strictly by the secure hardware enclave of the Android operating system.</li>
 </ul>
-<h3>2.4 Device &amp; Network Information</h3>
+<h3>2.6 Calendar Events &amp; Exports</h3>
+<ul>
+<li><strong>Add to Calendar:</strong> When you tap Add to Calendar on an action item, ScribeVault opens your calendar app with the event details filled in. You review and save the event there. ScribeVault does not request calendar permission and cannot read your calendar.</li>
+<li><strong>Exports &amp; Sharing:</strong> When you export or share a note (Markdown, PDF, text or subtitles), the content goes only to the app or destination you choose. What that app does with it is governed by its own privacy policy.</li>
+</ul>
+<h3>2.7 Usage Count</h3>
+<ul>
+<li>To apply the free plan's weekly limit, the app keeps a count of transcriptions in its encrypted local database. This count never leaves your device.</li>
+</ul>
+<h3>2.8 Device &amp; Network Information</h3>
 <ul>
 <li>The app requests internet access (<code>INTERNET</code>) only to download on-device AI speech models and to handle Google Play Billing transactions. No audio, transcripts, or notes are sent over the network.</li>
 <li>We do not log IP addresses, device identifiers (IMEI, Android ID), advertising IDs, or location data.</li>
